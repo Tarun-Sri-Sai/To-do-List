@@ -1,0 +1,51 @@
+.strike {
+    text-decoration:line-through
+}
+
+.unstrike {
+    text-decoration: none;
+}
+
+#container-div {
+    margin: 100px auto 0 auto;
+    width: 500px;
+}
+
+#instructions {
+    padding: 0px;
+    font-size: 15px;
+}
+
+#todos {
+    min-height: 200px;
+    font-size: 20px;
+}
+
+#clear-button {
+    font-size: 15px;
+    display: inline-block;
+}
+
+#clear-div {
+    direction: rtl;
+}
+
+#add-text {
+    margin: 0px 5px 0px 0px;
+    width: calc(100% - 75px);
+    font-size: 15px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-button {
+    font-size: 15px;
+}
+
+legend {
+    font-size: 20px;
+}
