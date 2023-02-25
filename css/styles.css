@@ -20,7 +20,7 @@
 #todos {
     min-height: 200px;
     font-size: 20px;
-    list-style-type: circle;
+    list-style-type: "» ";
 }
 
 #clear-button {
