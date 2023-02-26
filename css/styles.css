@@ -1,3 +1,8 @@
+:root {
+    --grad-start: #30acff;
+    --grad-end: #29e02c;
+}
+
 .strike {
     text-decoration:line-through
 }
@@ -50,4 +55,22 @@
 
 legend {
     font-size: 20px;
+}
+
+html {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background: linear-gradient(var(--grad-start), var(--grad-end));
+}
+
+#main-div {
+    height: 100%;
+    width: 100%;
 }
