@@ -23,7 +23,7 @@ function setToStorage() {
     let storedListString = JSON.stringify(list)
 
     localStorage.setItem(listKey, storedListString)
-    console.log(localStorage.getItem(listKey))  //  debug
+    // console.log(localStorage.getItem(listKey))  //  debug
 }
 
 function addTodo(todoText, todoStrike) {
