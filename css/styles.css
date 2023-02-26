@@ -1,11 +1,11 @@
 :root {
     --grad-start: #30acff;
     --grad-end: #29e02c;
-    --btn-color-1: #5adbb5;
+    --btn-color-1: #24c226;
     --border-1: #236a18;
     --border-2: #006bb2;
-    --btn-color-2: #e8e8e8;
-    --list-color: rgba(86, 230, 255, 0.168);
+    --btn-color-2: #2480be;
+    --list-color: rgba(86, 230, 255, 0.25);
 }
 
 .strike {
@@ -47,6 +47,7 @@
     border: 1px solid var(--border-2);
     padding: 5px 10px 5px 10px;
     background-color: var(--btn-color-2);
+    color: white;
 }
 
 #clear-div {
@@ -74,6 +75,7 @@
     border: 1px solid var(--border-1);
     padding: 5px 10px 5px 10px;
     background-color: var(--btn-color-1);
+    color: white;
 }
 
 html {
