@@ -13,8 +13,8 @@ function getFromStorage() {
     let storedList = storedListString == null ? null : JSON.parse(storedListString)
 
     if (storedList != null) {
-        storedList.forEach(todoText => {
-            addTodo(todoText)
+        storedList.forEach(todo => {
+            addTodo(todo.text, todo.strike)
         })
     }
 }
@@ -23,22 +23,37 @@ function setToStorage() {
     let storedListString = JSON.stringify(list)
 
     localStorage.setItem(listKey, storedListString)
-    // console.log(JSON.stringify(localStorage.getItem(listKey)))  //  debug
+    console.log(localStorage.getItem(listKey))  //  debug
 }
 
-function addTodo(todoText) {
-    list.push(todoText)
+function addTodo(todoText, todoStrike) {
+    let newListElement = {
+        text: todoText,
+        strike: todoStrike
+    };
+
+    list.push(newListElement)
     let documentList = document.getElementById("todos")
     let liElement = document.createElement("li")
 
     liElement.innerHTML = todoText
-    liElement.className = "unstrike"
+    if (todoStrike) {
+        liElement.className = "strike"
+    } else {
+        liElement.className = "unstrike"
+    }
     liElement.onclick = function () {
-        if (liElement.className == "unstrike") {
-            liElement.className = "strike"
+        let index = getIndexOf(liElement)
+        let listElement = list[index]
+
+        if (listElement.strike) {
+            listElement.strike = false
+            documentList.children[index].className = "unstrike"
         } else {
-            liElement.className = "unstrike"
+            listElement.strike = true
+            documentList.children[index].className = "strike"
         }
+        setToStorage()
     }
 
     liElement.ondblclick = function () {
