@@ -1,6 +1,11 @@
 :root {
     --grad-start: #30acff;
     --grad-end: #29e02c;
+    --btn-color-1: #5adbb5;
+    --border-1: #000000;
+    --border-2: #006bb2;
+    --btn-color-2: #e8e8e8;
+    --list-color: rgba(255, 255, 95, 0.75);
 }
 
 .strike {
@@ -14,6 +19,9 @@
 #container-div {
     margin: 100px auto 0 auto;
     width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
 }
 
 #instructions {
@@ -26,11 +34,20 @@
     min-height: 200px;
     font-size: 20px;
     list-style-type: "» ";
+    background-color: var(--list-color);
+    border-radius: 10px;
+    border: 1px solid var(--border-2);
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #clear-button {
     font-size: 15px;
     display: inline-block;
+    border-radius: 5px;
+    border: 1px solid var(--border-2);
+    padding: 5px 10px 5px 10px;
+    background-color: var(--btn-color-2);
 }
 
 #clear-div {
@@ -39,8 +56,11 @@
 
 #add-text {
     margin: 0px 5px 0px 0px;
-    width: calc(100% - 75px);
+    width: calc(100% - 85px);
     font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid var(--border-1);
+    padding: 5px 10px 5px 10px;
 }
 
 .container {
@@ -51,10 +71,10 @@
 
 #add-button {
     font-size: 15px;
-}
-
-legend {
-    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--border-1);
+    padding: 5px 10px 5px 10px;
+    background-color: var(--btn-color-1);
 }
 
 html {
