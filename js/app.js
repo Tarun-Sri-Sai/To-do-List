@@ -19,13 +19,6 @@ function getFromStorage() {
     }
 }
 
-function setToStorage() {
-    let storedListString = JSON.stringify(list)
-
-    localStorage.setItem(listKey, storedListString)
-    // console.log(localStorage.getItem(listKey))  //  debug
-}
-
 function addTodo(todoText, todoStrike) {
     let newListElement = {
         text: todoText,
@@ -65,6 +58,56 @@ function addTodo(todoText, todoStrike) {
     setToStorage()
 }
 
+function getIndexOf(liElement) {
+    let documentList = document.getElementById("todos")
+    let children = documentList.children
+
+    for (let length = children.length, i = 0; i < length; i++) {
+        if (children[i] == liElement) {
+            return i
+        }
+    }
+}
+
+function setToStorage() {
+    let storedListString = JSON.stringify(list)
+
+    localStorage.setItem(listKey, storedListString)
+    // console.log(localStorage.getItem(listKey))  //  debug
+}
+
+function removeAtIndex(index) {
+    let documentList = document.getElementById("todos")
+    let children = documentList.children
+    let length = children.length
+
+    if (index < 0 || index >= length) {
+        return
+    }
+
+    list.splice(index, 1)
+    documentList.removeChild(children[index])
+    setToStorage()
+}
+
+function setClearEvent() {
+    let clearButton = document.getElementById("clear-button")
+
+    clearButton.onclick = function () {
+        list = []
+        let documentList = document.getElementById("todos")
+
+        empty(documentList)
+    }
+}
+
+function empty(documentList) {
+    while (documentList.firstChild) {
+        documentList.removeChild(documentList.firstChild)
+    }
+    setToStorage()
+}
+
 function setAddEvent() {
     let addButton = document.getElementById("add-button")
 
@@ -83,47 +126,4 @@ function getText() {
 
     textBox.value = ""
     return result
-}
-
-function empty(documentList) {
-    while (documentList.firstChild) {
-        documentList.removeChild(documentList.firstChild)
-    }
-    setToStorage()
-}
-
-function setClearEvent() {
-    let clearButton = document.getElementById("clear-button")
-
-    clearButton.onclick = function () {
-        list = []
-        let documentList = document.getElementById("todos")
-
-        empty(documentList)
-    }
-}
-
-function removeAtIndex(index) {
-    let documentList = document.getElementById("todos")
-    let children = documentList.children
-    let length = children.length
-
-    if (index < 0 || index >= length) {
-        return
-    }
-
-    list.splice(index, 1)
-    documentList.removeChild(children[index])
-    setToStorage()
-}
-
-function getIndexOf(liElement) {
-    let documentList = document.getElementById("todos")
-    let children = documentList.children
-
-    for (let length = children.length, i = 0; i < length; i++) {
-        if (children[i] == liElement) {
-            return i
-        }
-    }
 }
