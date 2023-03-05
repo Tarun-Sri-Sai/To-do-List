@@ -93,8 +93,3 @@ body {
     background: linear-gradient(var(--grad-start), var(--grad-end));
     font-family: Arial, Helvetica, sans-serif;
 }
-
-#main-div {
-    height: 100%;
-    width: 100%;
-}
